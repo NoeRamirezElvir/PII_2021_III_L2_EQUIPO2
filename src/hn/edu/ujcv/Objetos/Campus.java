@@ -12,7 +12,6 @@ public class Campus {
     private Date   fechaInicio;
 
     public Campus(){
-
     }
     public Campus(int pId,String pNombre,String pDireccion,Date pFechaInicio){
         if( pId < 0 || (String.valueOf(pId).length())<4){
@@ -30,22 +29,19 @@ public class Campus {
         this.fechaInicio = pFechaInicio;
     }
 
-    public int getID() {
+    public int    getID() {
         return ID;
     }
-
-    public void setID(int pId) {
+    public void   setID(int pId) {
         if( pId < 0 || (String.valueOf(pId).length())<4){
             throw new IllegalArgumentException("El ID es incorrecto.");
         }
-
         this.ID = pId;
     }
-
     public String getNombre() {
         return nombre;
     }
-    public void setNombre(String pNombre) {
+    public void   setNombre(String pNombre) {
         if(pNombre.length()<3){
             throw new IllegalArgumentException("El nombre es muy corto.");
         }
@@ -54,20 +50,20 @@ public class Campus {
     public String getDireccion() {
         return direccion;
     }
-    public void setDireccion(String pDireccion) {
+    public void   setDireccion(String pDireccion) {
         if(pDireccion.length()<4){
             throw new IllegalArgumentException("La direccion es muy corta.");
         }
         this.direccion = pDireccion;
     }
-    public Date getFechaInicio() {
+    public Date   getFechaInicio() {
         return fechaInicio;
     }
-    public void setFechaInicio(Date fechaInicio) {
+    public void   setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public void registrarCampus(ListaCampus listaCampus){
+    public void    registrarCampus(ListaCampus listaCampus){
         Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         Campus campus = new Campus();
         int ID;

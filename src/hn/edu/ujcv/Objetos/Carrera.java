@@ -18,29 +18,26 @@ public class Carrera {
         this.nombre = pNombre;
     }
 
-    public int getID() {
+    public int    getID() {
         return ID;
     }
-
-    public void setID(int pId) {
+    public void   setID(int pId) {
         if((String.valueOf(pId).length()) < 4){
             throw new IllegalArgumentException("El ID es muy corto.");
         }
         this.ID = pId;
     }
-
     public String getNombre() {
         return nombre;
     }
-
-    public void setNombre(String pNombre) {
+    public void   setNombre(String pNombre) {
         if(pNombre.length() < 3){
             throw new IllegalArgumentException("El nombre es muy corto.");
         }
         this.nombre = pNombre;
     }
 
-    public void registrarCarrera(ListaCarreras listaCarreras){
+    public void    registrarCarrera(ListaCarreras listaCarreras){
         Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         Carrera carrera = new Carrera();
         int ID;

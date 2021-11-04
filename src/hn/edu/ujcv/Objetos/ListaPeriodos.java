@@ -5,17 +5,15 @@ import java.util.ArrayList;
 public class ListaPeriodos {
     private final ArrayList<Periodo> listaPeriodos;
 
-    public ListaPeriodos(){
+    public      ListaPeriodos(){
         listaPeriodos = new ArrayList<>();
     }
     public void addPeriodo(Periodo periodo){
         listaPeriodos.add(periodo);
     }
-
     public ArrayList<Periodo> getListaPeriodos() {
         return listaPeriodos;
     }
-
     public void imprimirLista(){
         System.out.println("  ID           Direccion         Fecha de Inicio         Fecha Final");
         for (Periodo lista: listaPeriodos) {
