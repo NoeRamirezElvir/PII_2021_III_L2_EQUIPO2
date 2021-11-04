@@ -5,17 +5,15 @@ import java.util.ArrayList;
 public class ListaCatedraticos {
     private final ArrayList<Catedratico> listaCatedraticos;
 
-    public ListaCatedraticos(){
+    public      ListaCatedraticos(){
         listaCatedraticos = new ArrayList<>();
     }
     public void addCatedratico(Catedratico catedratico){
         listaCatedraticos.add(catedratico);
     }
-
     public ArrayList<Catedratico> getListaCatedraticos() {
         return listaCatedraticos;
     }
-
     public void imprimirLista(){
         System.out.println("    ID              Codigo         Nombre           Fecha de nacimiento            Edad  ");
         for (Catedratico lista: listaCatedraticos) {

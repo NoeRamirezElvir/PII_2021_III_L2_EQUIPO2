@@ -27,8 +27,7 @@ public class Alumno extends Persona{
         this.numCuenta = pNumCuenta;
     }
 
-
-    public void registrarAlumno(ListaAlumnos listaAlumnos) {
+    public void    registrarAlumno(ListaAlumnos listaAlumnos) {
         Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         Alumno alumno = new Alumno();
         try {

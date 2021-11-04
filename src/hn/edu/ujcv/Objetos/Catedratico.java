@@ -19,17 +19,17 @@ public class Catedratico extends Persona{
         this.codigo = pCodigo;
     }
 
-    public int getCodigo() {
+    public int  getCodigo() {
         return codigo;
     }
-
     public void setCodigo(int pCodigo) {
         if((String.valueOf(pCodigo).length()) <2 ){
             throw new IllegalArgumentException("El codigo es muy corto.");
         }
         this.codigo = pCodigo;
     }
-    public void registrarCatedratico(ListaCatedraticos listaCatedraticos){
+
+    public void    registrarCatedratico(ListaCatedraticos listaCatedraticos){
         Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         Catedratico catedratico = new Catedratico();
         try{

@@ -25,10 +25,10 @@ public class Periodo {
      this.fechaFinal  = pFechaFinal;
   }
 
-  public int getID() {
+  public int    getID() {
      return ID;
   }
-  public void setID(int pId) {
+  public void   setID(int pId) {
      if(pId <= 0){
      throw new IllegalArgumentException("El ID es incorrecto.");
      }
@@ -37,30 +37,29 @@ public class Periodo {
   public String getDescripcion() {
      return descripcion;
   }
-  public void setDescripcion(String pDescripcion) {
+  public void   setDescripcion(String pDescripcion) {
      if(pDescripcion.length() < 5){
       throw new IllegalArgumentException("La descripcion es muy corta.");
      }
      this.descripcion = pDescripcion;
   }
-  public Date getFechaInicio() {
+  public Date   getFechaInicio() {
       return fechaInicio;
   }
-  public void setFechaInicio(Date fechaInicio) {
+  public void   setFechaInicio(Date fechaInicio) {
      this.fechaInicio = fechaInicio;
   }
-  public Date getFechaFinal() {
+  public Date   getFechaFinal() {
      return fechaFinal;
   }
-  public void setFechaFinal(Date fechaFinal) {
+  public void   setFechaFinal(Date fechaFinal) {
      this.fechaFinal = fechaFinal;
   }
 
-  public void registrarPeriodo(ListaPeriodos listaPeriodos){
+  public void   registrarPeriodo(ListaPeriodos listaPeriodos){
      Scanner teclado = new Scanner(System.in).useDelimiter("\n");
      Periodo periodo = new Periodo();
      try{
-
          int ID;
          do{
          System.out.print("Ingrese el ID: ");
@@ -83,7 +82,6 @@ public class Periodo {
      }
 
   }
-
  public boolean validarID(ListaPeriodos listaPeriodos,int ID){
   boolean condicion = false;
   for (Periodo periodo: listaPeriodos.getListaPeriodos()) {
