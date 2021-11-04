@@ -19,7 +19,7 @@ public class Historial implements IHistorial{
         this.Periodo = pPeriodo;
     }
 
-    public hn.edu.ujcv.Objetos.Alumno getAlumno() {
+    public Alumno getAlumno() {
         return Alumno;
     }
 
@@ -63,11 +63,12 @@ public class Historial implements IHistorial{
                                  ListaPeriodos listaPeriodos,ListaClases listaClases){
         Scanner teclado     = new Scanner(System.in).useDelimiter("\n");
         Historial historial = new Historial();
-        Alumno alumno   = new Alumno();
-        Campus campus   = new Campus();
-        Carrera carrera = new Carrera();
-        Periodo periodo = new Periodo();
+        Alumno alumno       = new Alumno();
+        Campus campus       = new Campus();
+        Carrera carrera     = new Carrera();
+        Periodo periodo     = new Periodo();
         ArrayList<Clase> clases = new ArrayList<>();
+
             System.out.println("-----Alumno-----");
             alumno.registrarAlumno(listaAlumnos);
             historial.setAlumno(alumno);
@@ -85,9 +86,9 @@ public class Historial implements IHistorial{
             System.out.println("-----Clases-----");
         do {
             do {
-                General claseGeneral   = new Ingenieria();
-                General claseGeneral2  = new Idioma();
-                Avanzada claseAvanzada = new Avanzada();
+                Ingenieria claseGeneral   = new Ingenieria();
+                Idioma claseGeneral2      = new Idioma();
+                Avanzada claseAvanzada    = new Avanzada();
                 System.out.println("                Menu Clases  ");
                 System.out.println("1. Agregar Clase General          2. Agregar Clase Avanzada");
                 System.out.print("Elija una opcion: ");
@@ -126,7 +127,7 @@ public class Historial implements IHistorial{
 
             System.out.print("Desea Añadir otra Clase? S/N: ");
             }while (teclado.next().equalsIgnoreCase("s"));
-        historial.setClases(clases);
+            historial.setClases(clases);
             }
 
     @Override

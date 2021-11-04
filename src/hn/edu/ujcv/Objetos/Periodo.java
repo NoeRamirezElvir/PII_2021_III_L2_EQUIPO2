@@ -80,7 +80,6 @@ public class Periodo {
      }catch(ParseException e){
            throw new IllegalArgumentException("Error " + e.getMessage());
      }
-
   }
  public boolean validarID(ListaPeriodos listaPeriodos,int ID){
   boolean condicion = false;

@@ -25,6 +25,6 @@ public class General extends Clase{
     }
     @Override
     public String toString(){
-        return super.toString().concat("\nDentro de las carreras Generales: ".concat(String.valueOf(TodasCarreras)));
+        return super.toString();
     }
 }

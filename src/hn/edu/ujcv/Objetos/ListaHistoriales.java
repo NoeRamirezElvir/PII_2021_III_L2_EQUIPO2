@@ -31,6 +31,5 @@ public class ListaHistoriales {
             promedio += itClases.next().calcularPromedio();
         }
         return promedio/getListaHistoriales().size();
-
     }
 }
