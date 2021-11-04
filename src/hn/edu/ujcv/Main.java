@@ -17,9 +17,9 @@ public class Main {
             Campus                       campus   = new Campus();
             Carrera                     carrera   = new Carrera();
             Periodo                     periodo   = new Periodo();
-            Clase                       clase1    = new Idioma();
-            Clase                       clase2    = new Ingenieria();
-            Clase                       clase3    = new Avanzada();
+            Idioma                      clase1    = new Idioma();
+            Ingenieria                  clase2    = new Ingenieria();
+            Avanzada                    clase3    = new Avanzada();
             Historial                   historial = new Historial();
             //Listas
             ListaAlumnos           listaAlumnos  = new ListaAlumnos();
@@ -73,7 +73,6 @@ public class Main {
                             switch (teclado.nextInt()){
                                 case 1:
                                     do {
-
                                         System.out.println("                Clases Generales  ");
                                         System.out.println("1. Agregar Ingenieria          2. Agregar Idioma");
                                         System.out.print("Elija una opcion: ");
@@ -88,8 +87,9 @@ public class Main {
                                                 System.out.println("Opcion Invalida!");
                                                 break;
                                         }
-                                        System.out.print("Desea continuar S/N: ");
+                                        System.out.print("Desea agregar otra clase General S/N: ");
                                     }while (teclado.next().equalsIgnoreCase("s"));
+                                    break;
                                 case 2:
                                     clase3.registarClase(listaClases);
                                     break;
@@ -97,7 +97,7 @@ public class Main {
                                     System.out.println("Opcion Invalida!");
                                     break;
                             }
-                            System.out.print("Desea continuar S/N: ");
+                            System.out.print("Desea agregar otra clase S/N: ");
                         }while (teclado.next().equalsIgnoreCase("s"));
                         break;
                     case 8:
@@ -124,7 +124,12 @@ public class Main {
                         //Lista de Historiales
                         listaHistorial.ImprimirLista();
                         break;
+                    case 14:
+                        //Lista de Clases
+                        listaClases.ImprimirLista();
+                        break;
                     default:
+                        System.out.println("Opcion Invalida!");
                         break;
                 }
                 System.out.print("Desea continuar S/N: ");

@@ -37,19 +37,24 @@ public class Avanzada extends Clase{
         if (repo.equalsIgnoreCase("s")){
             System.out.println("1- Primer parcial     2- Segundo Parcial"+"\nElija una opcion> ");
             opcion = teclado.nextInt();
+            boolean condicion = false;
             do {
                 switch (opcion){
                     case 1:
-
+                        int nota = teclado.nextInt();
+                        clase.setNE1(nota);
+                        clase.setNR(nota);
                         break;
                     case 2:
-
+                        int nota1 = teclado.nextInt();
+                        clase.setNE2(nota1);
+                        clase.setNR(nota1);
                         break;
                     default:
                         System.out.println("Opcion Invalida");
                         break;
                 }
-            }while (opcion!=1 || opcion!=2);
+            }while (opcion!=1 && opcion!=2);
         }else
             clase.setNR(0);
         System.out.print("Ingrese la Nota de Acumulativo del tercer parcial: ");
@@ -86,14 +91,14 @@ public class Avanzada extends Clase{
     @Override
     public double calcularNotaFinal() {
         double nota1=0.0,nota2=0.0,nota3=0.0,notaF=0.0;
-        nota1 =((getNA1()+getNE1()+getNR())*0.3);
-        nota2 =((getNA2()+getNE2()+getNR())*0.3);
+        nota1 =((getNA1()+getNE1())*0.3);
+        nota2 =((getNA2()+getNE2())*0.3);
         nota3 =((getNA3()+getNE3())*0.4);
-        notaF = (nota1+nota2+nota3)/3;
+        notaF = (nota1+nota2+nota3);
         return notaF;
     }
     @Override
     public String toString(){
-        return super.toString().concat(" Valor Vinculacion : ".concat(String.valueOf(ValorVinculacion)));
+        return super.toString().concat("\nValor Vinculacion : ".concat(String.valueOf(ValorVinculacion)));
     }
 }

@@ -53,7 +53,6 @@ public abstract class Persona {
             LocalDate fechaDeNacimiento = getFechaNacimiento().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             LocalDate fechaActual = LocalDate.now();
             Period periodo = Period.between(fechaDeNacimiento, fechaActual);
-
         return periodo.getYears();
     }
 }
