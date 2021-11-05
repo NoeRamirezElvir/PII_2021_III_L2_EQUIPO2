@@ -2,7 +2,6 @@ package hn.edu.ujcv.Objetos;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
 
 public class Historial implements IHistorial {
     private Alumno Alumno;
@@ -64,35 +63,36 @@ public class Historial implements IHistorial {
 
     public void agregarHistorial(ListaAlumnos listaAlumnos, ListaCampus listaCampus, ListaCarreras listaCarreras,
                                  ListaPeriodos listaPeriodos, ListaClases listaClases, ListaHistoriales listaHistorial) {
-        Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         Historial historial = new Historial();
-        ArrayList<Clase> clases = new ArrayList<>();
-        ListaAlumnos  alumnos  = new ListaAlumnos();
-        ListaCampus   campus   = new ListaCampus();
-        ListaCarreras carreras = new ListaCarreras();
-        ListaPeriodos periodos = new ListaPeriodos();
-
         System.out.println("-----Alumno-----");
         listaAlumnos.imprimirLista();
-        historial.setAlumno(alumnos.buscarAlumno(listaAlumnos));
+        historial.setAlumno(listaAlumnos.buscarAlumno(listaAlumnos));
         System.out.println("-----Campus-----");
         listaCampus.imprimirLista();
-        historial.setCampus(campus.buscarCampus(listaCampus));
+        historial.setCampus(listaCampus.buscarCampus(listaCampus));
         System.out.println("-----Carrera-----");
         listaCarreras.imprimirLista();
-        historial.setCarrera(carreras.buscarCampus(listaCarreras));
+        historial.setCarrera(listaCarreras.buscarCarrera(listaCarreras));
         System.out.println("-----Periodo-----");
         listaPeriodos.imprimirLista();
-        historial.setPeriodo(periodos.buscarCampus(listaPeriodos));
+        historial.setPeriodo(listaPeriodos.buscarCampus(listaPeriodos));
         listaHistorial.AddHistorial(historial);
+        System.out.println("-----Clases-----");
+        listaClases.mostrarClase();
+        historial.setClases(listaClases.buscarClases());
+
     }
     @Override
     public String toString(){
+        StringBuilder clases = new StringBuilder();
+        for (Clase item: Clases) {
+            clases.append(String.format("%s\n", item.getNombre()));
+        }
 
-        return " Alumno: ".concat(getAlumno().getNombre()).concat(" Carnet: ".concat(String.valueOf(getAlumno().getNumCuenta())
-                .concat("\nCarrera: ").concat(getCarrera().getNombre())).concat("\nCampus: ").concat(getCampus().getNombre())
-                .concat("\nPeriodo: ").concat(getPeriodo().getDescripcion())).concat("    Promedio del periodo: ")
-                .concat(String.valueOf(calcularPromedio()));
+        return "* Alumno: ".concat(getAlumno().getNombre()).concat(" Carnet: ".concat(String.valueOf(getAlumno().getNumCuenta())
+                                .concat("\nCarrera: ").concat(getCarrera().getNombre())).concat("\nCampus: ").concat(getCampus().getNombre())
+                        .concat("\nPeriodo: ").concat(getPeriodo().getDescripcion())).concat("   Promedio del periodo: ")
+                .concat(String.valueOf(calcularPromedio())).concat("\nClases:\n").concat(clases.toString());
     }
     @Override
     public double calcularPromedio() {

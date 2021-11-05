@@ -22,7 +22,7 @@ public class ListaCarreras {
                     lista.getNombre());
         }
     }
-    public Carrera buscarCampus(ListaCarreras listaCarreras){
+    public Carrera buscarCarrera(ListaCarreras listaCarreras){
         Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         int    identidad;
         Carrera carrera = new Carrera();

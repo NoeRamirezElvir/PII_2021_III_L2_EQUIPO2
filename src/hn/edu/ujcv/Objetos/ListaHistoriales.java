@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ListaHistoriales {
-    private ArrayList<Historial> ListaHistoriales;
+    private final ArrayList<Historial> ListaHistoriales;
 
     public      ListaHistoriales(){
         ListaHistoriales = new ArrayList<>();
@@ -17,12 +17,13 @@ public class ListaHistoriales {
     }
 
     public void ImprimirLista(){
-        StringBuilder listado = new StringBuilder();
+        //StringBuilder listado = new StringBuilder();
         for (Historial item : ListaHistoriales) {
-            listado.append(item.toString());
-            listado.append("     Promedio Global: ").append(CalcularPromedioGlobal());
+            /*listado.append(item.toString());*/
+            //listado.append("     Promedio Global: ").append(CalcularPromedioGlobal());
+            System.out.println(item.toString() + "Promedio global" + CalcularPromedioGlobal());
         }
-        System.out.println(listado);
+        // System.out.println(listado);
     }
     public double CalcularPromedioGlobal(){
         double promedio = 0.0;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ListaClases {
-    private ArrayList<Clase> ListaClases;
+    private final ArrayList<Clase> ListaClases;
 
     public ListaClases(){
         ListaClases = new ArrayList<>();
@@ -34,6 +34,28 @@ public class ListaClases {
             listado.append("\n-Nota Final de esta clase: ").append(lista.calcularNotaFinal());
         }
         System.out.println(listado);
+    }
+    public void mostrarClase(){
+        System.out.println("ID           Nombre             UV");
+        for (Clase item : ListaClases) {
+            System.out.println(item.getId() + "        " + item.getNombre() + "         " + item.getUnidadesValorativas());
+        }
+    }
+    public ArrayList<Clase> buscarClases(){
+        Scanner teclado = new Scanner(System.in).useDelimiter("\n");
+        ArrayList<Clase> lista = new ArrayList<>();
+        do {
+            System.out.println("Ingrese el ID de la clase: ");
+            int id = teclado.nextInt();
+            for (Clase item: ListaClases) {
+                if (id == item.getId()){
+                    lista.add(item);
+                }
+            }
+            System.out.println("Agregar otra clase S/N:");
+        }while((teclado.next()).equalsIgnoreCase("s"));
+
+        return lista;
     }
 
 }
