@@ -1,6 +1,7 @@
 package hn.edu.ujcv.Objetos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListaClases {
     private ArrayList<Clase> ListaClases;
@@ -34,4 +35,5 @@ public class ListaClases {
         }
         System.out.println(listado);
     }
+
 }

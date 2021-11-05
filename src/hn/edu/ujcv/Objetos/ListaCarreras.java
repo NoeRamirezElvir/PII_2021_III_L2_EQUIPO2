@@ -1,6 +1,7 @@
 package hn.edu.ujcv.Objetos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListaCarreras {
     private final ArrayList<Carrera> listaCarreras;
@@ -20,5 +21,23 @@ public class ListaCarreras {
             System.out.println(lista.getID() + "            " +
                     lista.getNombre());
         }
+    }
+    public Carrera buscarCampus(ListaCarreras listaCarreras){
+        Scanner teclado = new Scanner(System.in).useDelimiter("\n");
+        int    identidad;
+        Carrera carrera = new Carrera();
+        do {
+            System.out.print(" Ingrese el  Id: ");
+            identidad = teclado.nextInt();
+            for (Carrera item: getListaCarreras()) {
+                if(identidad == item.getID()) {
+                    carrera = item;
+                }
+            }
+            if (!carrera.validarID(listaCarreras,identidad))
+                System.out.println("Digite una Id valida!");
+
+        }while (!carrera.validarID(listaCarreras,identidad));
+        return carrera;
     }
 }

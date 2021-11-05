@@ -1,6 +1,7 @@
 package hn.edu.ujcv.Objetos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListaCampus {
     private final ArrayList<Campus> listaCampus;
@@ -22,5 +23,23 @@ public class ListaCampus {
                     lista.getDireccion() + "      " +
                     lista.getFechaInicio());
         }
+    }
+    public Campus buscarCampus(ListaCampus listaCampus){
+        Scanner teclado = new Scanner(System.in).useDelimiter("\n");
+        int    identidad;
+        Campus campus = new Campus();
+        do {
+            System.out.print(" Ingrese el Id: ");
+            identidad = teclado.nextInt();
+            for (Campus item: getListaCampus()) {
+                if(identidad == item.getID()) {
+                    campus = item;
+                }
+            }
+            if (!campus.validarID(listaCampus,identidad))
+                System.out.println("Digite una Id valida!");
+
+        }while (!campus.validarID(listaCampus,identidad));
+        return campus;
     }
 }
