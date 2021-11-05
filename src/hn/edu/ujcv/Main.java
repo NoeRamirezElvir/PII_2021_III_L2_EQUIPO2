@@ -4,7 +4,6 @@ import hn.edu.ujcv.Objetos.*;
 
 import java.util.Scanner;
 
-
 public class Main {
 
     public static void main(String[] args) {
@@ -62,7 +61,7 @@ public class Main {
                         break;
                     case 6:
                         //Agregar Historial
-                        historial.agregarHistorial(listaAlumnos,listaCampus,listaCarreras,listaPeriodos,listaClases);
+                        historial.agregarHistorial(listaAlumnos,listaCampus,listaCarreras,listaPeriodos,listaClases,listaHistorial);
                         break;
                     case 7:
                         //agregar Clases

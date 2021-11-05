@@ -4,18 +4,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Historial implements IHistorial{
-    private Alumno  Alumno;
-    private Campus  Campus;
+public class Historial implements IHistorial {
+    private Alumno Alumno;
+    private Campus Campus;
     private Carrera Carrera;
     private ArrayList<Clase> Clases;
     private Periodo Periodo;
-    public Historial(){}
-    public Historial(Alumno pAlumno,Campus pCampus, Carrera pCarrera, ArrayList<Clase> pClases,Periodo pPeriodo){
-        this.Alumno  = pAlumno;
-        this.Campus  = pCampus;
+
+    public Historial() {
+    }
+
+    public Historial(Alumno pAlumno, Campus pCampus, Carrera pCarrera, ArrayList<Clase> pClases, Periodo pPeriodo) {
+        this.Alumno = pAlumno;
+        this.Campus = pCampus;
         this.Carrera = pCarrera;
-        this.Clases  = pClases;
+        this.Clases = pClases;
         this.Periodo = pPeriodo;
     }
 
@@ -60,76 +63,29 @@ public class Historial implements IHistorial{
     }
 
     public void agregarHistorial(ListaAlumnos listaAlumnos, ListaCampus listaCampus, ListaCarreras listaCarreras,
-                                 ListaPeriodos listaPeriodos,ListaClases listaClases){
-        Scanner teclado     = new Scanner(System.in).useDelimiter("\n");
+                                 ListaPeriodos listaPeriodos, ListaClases listaClases, ListaHistoriales listaHistorial) {
+        Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         Historial historial = new Historial();
-        Alumno alumno       = new Alumno();
-        Campus campus       = new Campus();
-        Carrera carrera     = new Carrera();
-        Periodo periodo     = new Periodo();
         ArrayList<Clase> clases = new ArrayList<>();
+        ListaAlumnos  alumnos  = new ListaAlumnos();
+        ListaCampus   campus   = new ListaCampus();
+        ListaCarreras carreras = new ListaCarreras();
+        ListaPeriodos periodos = new ListaPeriodos();
 
-            System.out.println("-----Alumno-----");
-            alumno.registrarAlumno(listaAlumnos);
-            historial.setAlumno(alumno);
-            System.out.println("-----Campus-----");
-            campus.registrarCampus(listaCampus);
-            historial.setCampus(campus);
-
-            System.out.println("-----Carrera-----");
-            carrera.registrarCarrera(listaCarreras);
-            historial.setCarrera(carrera);
-
-            System.out.println("-----Periodo-----");
-            periodo.registrarPeriodo(listaPeriodos);
-            historial.setPeriodo(periodo);
-            System.out.println("-----Clases-----");
-        do {
-            do {
-                Ingenieria claseGeneral   = new Ingenieria();
-                Idioma claseGeneral2      = new Idioma();
-                Avanzada claseAvanzada    = new Avanzada();
-                System.out.println("                Menu Clases  ");
-                System.out.println("1. Agregar Clase General          2. Agregar Clase Avanzada");
-                System.out.print("Elija una opcion: ");
-                switch (teclado.nextInt()){
-                    case 1:
-                        do {
-
-                            System.out.println("                Clases Generales  ");
-                            System.out.println("1. Agregar Ingenieria          2. Agregar Idioma");
-                            System.out.print("Elija una opcion: ");
-                            switch (teclado.nextInt()){
-                                case 1:
-                                    claseGeneral.registarClase(listaClases);
-                                    clases.add(claseGeneral);
-                                    break;
-                                case 2:
-                                    claseGeneral2.registarClase(listaClases);
-                                    clases.add(claseGeneral2);
-                                    break;
-                                default:
-                                    System.out.println("Opcion Invalida!");
-                                    break;
-                            }
-                            System.out.print("Desea continuar S/N: ");
-                        }while (teclado.next().equalsIgnoreCase("s"));
-                    case 2:
-                        claseAvanzada.registarClase(listaClases);
-                        clases.add(claseAvanzada);
-                        break;
-                    default:
-                        System.out.println("Opcion Invalida!");
-                        break;
-                }
-                System.out.print("Desea Añadir otra clase General? S/N: ");
-            }while (teclado.next().equalsIgnoreCase("s"));
-
-            System.out.print("Desea Añadir otra Clase? S/N: ");
-            }while (teclado.next().equalsIgnoreCase("s"));
-            historial.setClases(clases);
-            }
-
+        System.out.println("-----Alumno-----");
+        listaAlumnos.imprimirLista();
+        historial.setAlumno(alumnos.buscarAlumno(listaAlumnos));
+        System.out.println("-----Campus-----");
+        listaCampus.imprimirLista();
+        historial.setCampus(campus.buscarCampus(listaCampus));
+        System.out.println("-----Carrera-----");
+        listaCarreras.imprimirLista();
+        historial.setCarrera(carreras.buscarCampus(listaCarreras));
+        System.out.println("-----Periodo-----");
+        listaPeriodos.imprimirLista();
+        historial.setPeriodo(periodos.buscarCampus(listaPeriodos));
+        listaHistorial.AddHistorial(historial);
+    }
     @Override
     public String toString(){
 
