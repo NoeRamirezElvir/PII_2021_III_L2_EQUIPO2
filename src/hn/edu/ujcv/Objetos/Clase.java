@@ -94,6 +94,6 @@ public abstract class Clase implements IClase{
     }
     @Override
     public String toString(){
-        return "Asignatura: ".concat(Nombre).concat(" UV: ").concat(String.valueOf(UnidadesValorativas));
+        return "\nAsignatura: ".concat(Nombre).concat(" UV: ").concat(String.valueOf(UnidadesValorativas));
     }
 }

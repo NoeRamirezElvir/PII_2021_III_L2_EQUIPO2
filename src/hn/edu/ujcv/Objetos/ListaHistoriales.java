@@ -17,13 +17,11 @@ public class ListaHistoriales {
     }
 
     public void ImprimirLista(){
-        //StringBuilder listado = new StringBuilder();
+        System.out.println("Promedio Global: " + CalcularPromedioGlobal());
         for (Historial item : ListaHistoriales) {
-            /*listado.append(item.toString());*/
-            //listado.append("     Promedio Global: ").append(CalcularPromedioGlobal());
-            System.out.println(item.toString() + "Promedio global" + CalcularPromedioGlobal());
+            System.out.println(item.toString());
         }
-        // System.out.println(listado);
+
     }
     public double CalcularPromedioGlobal(){
         double promedio = 0.0;
