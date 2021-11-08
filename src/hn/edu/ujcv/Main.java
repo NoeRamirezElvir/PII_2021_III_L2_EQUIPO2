@@ -77,10 +77,10 @@ public class Main {
                                         System.out.print("Elija una opcion: ");
                                         switch (teclado.nextInt()){
                                             case 1:
-                                                clase2.registarClase(listaClases);
+                                                clase2.registarClaseC(listaClases);
                                                 break;
                                             case 2:
-                                                clase1.registarClase(listaClases);
+                                                clase1.registarClaseC(listaClases);
                                                 break;
                                             default:
                                                 System.out.println("Opcion Invalida!");
@@ -90,7 +90,7 @@ public class Main {
                                     }while (teclado.next().equalsIgnoreCase("s"));
                                     break;
                                 case 2:
-                                    clase3.registarClase(listaClases);
+                                    clase3.registarClaseB(listaClases);
                                     break;
                                 default:
                                     System.out.println("Opcion Invalida!");

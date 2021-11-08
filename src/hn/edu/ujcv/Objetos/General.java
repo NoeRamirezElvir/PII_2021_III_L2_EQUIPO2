@@ -5,9 +5,9 @@ public class General extends Clase{
 
     public General(){super();}
 
-    @Override
-    public void registarClase(ListaClases listaClases){
 
+    public void registarClaseB(ListaClases listaClases){
+        this.registarClase(listaClases);
     }
 
     public General(boolean pTodasCarreras,int pId,String pNombre,int pUnidadesValorativas, int pNA1,int pNE1,int pNA2,int pNE2,

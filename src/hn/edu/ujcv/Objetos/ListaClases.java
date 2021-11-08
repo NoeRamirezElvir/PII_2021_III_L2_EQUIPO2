@@ -21,17 +21,17 @@ public class ListaClases {
         StringBuilder listado = new StringBuilder();
         for (Clase lista: ListaClases) {
             listado.append(lista.toString());
-            if (lista instanceof  General)
+            if (lista instanceof  General ) {
                 tipoClase = "General";
-            else
+                if (lista instanceof Ingenieria)
+                    tipoFaultad = "Ingenieria";
+                else
+                    tipoFaultad = "Idioma";
+                listado.append("\n -Tipo de Facultad: " ).append(tipoFaultad);
+            } else
                 tipoClase = "Avanzada";
-            listado.append("\n-Tipo de Clase: " ).append(tipoClase);
-            if (lista instanceof  Ingenieria)
-                tipoFaultad = "Ingenieria";
-            else
-                tipoFaultad = "Idioma";
-            listado.append("\n-Tipo de Facultad: " ).append(tipoFaultad);
-            listado.append("\n-Nota Final de esta clase: ").append(lista.calcularNotaFinal());
+            listado.append("\n -Tipo de Clase: " ).append(tipoClase);
+            listado.append("\n -Nota Final de esta clase: ").append(lista.calcularNotaFinal());
         }
         System.out.println(listado);
     }
