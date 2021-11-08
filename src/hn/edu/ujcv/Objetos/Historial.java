@@ -76,10 +76,10 @@ public class Historial implements IHistorial {
         System.out.println("-----Periodo-----");
         listaPeriodos.imprimirLista();
         historial.setPeriodo(listaPeriodos.buscarCampus(listaPeriodos));
-        listaHistorial.AddHistorial(historial);
         System.out.println("-----Clases-----");
         listaClases.mostrarClase();
         historial.setClases(listaClases.buscarClases());
+        listaHistorial.AddHistorial(historial);
 
     }
     @Override
